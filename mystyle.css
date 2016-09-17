@@ -1,15 +1,16 @@
 html, body{
-	/* background-color:#E7E9EC; */
+    background-color:#E7E9EC;
 }
 
-body{
-  padding-top:3em;
+body .container{
+    padding:3em 0em;
+    background-color:white;
 }
 
 .my-avatar{
-  margin-top:2em;
+    margin-top:2em;
 }
 
 .navigation{
-  margin:2em 0em;
+    margin:2em 0em;
 }
