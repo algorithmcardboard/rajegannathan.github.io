@@ -6,9 +6,15 @@
 	<body>
 		Open network pane to see if the request has been sent successfully.
 		<script>
-			var xhr = new XMLHttpRequest();
-			xhr.open("GET", "http://secure.vera.com/api/version");
-			xhr.send();
+			var xhr1 = new XMLHttpRequest();
+			var xhr2 = new XMLHttpRequest();
+
+			xhr1.open("GET", "http://127.0.0.1/api/version");
+			xhr2.open("GET", "http://secure.vera.com/api/version");
+
+			xhr1.send();
+			xhr2.send();
+
 		</script>
 	</body>
 </html>
