@@ -15,6 +15,13 @@
 			xhr1.send();
 			xhr2.send();
 
+
+			var iframe = document.createElement('iframe');
+			iframe.src = 'zoommtg://';
+			iframe.addEventListener('load', function(e){console.log('load ', e);});
+			iframe.addEventListener('error', function(e){console.log('error', e);});
+
+			document.body.appendChild(iframe);
 		</script>
 	</body>
 </html>
