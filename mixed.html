@@ -6,6 +6,16 @@
 	<body>
 		Open network pane to see if the request has been sent successfully.
 		<script>
+			var img = new Image();
+			img.onload = function(e){
+				console.log('load successful', e);
+			};
+			img.onerror = function(e){
+				console.log('load error', e);
+			};
+			img.src = 'http://127.0.0.1/iisstart.png';
+		</script>
+		<script>
 			var xhr1 = new XMLHttpRequest();
 			var xhr2 = new XMLHttpRequest();
 
