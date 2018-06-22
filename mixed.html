@@ -9,11 +9,19 @@
 			var xhr1 = new XMLHttpRequest();
 			var xhr2 = new XMLHttpRequest();
 
-			xhr1.open("GET", "http://127.0.0.1/api/version");
-			xhr2.open("GET", "http://secure.vera.com/api/version");
+			try{
+				xhr1.open("GET", "http://127.0.0.1/api/version");
+			}catch (e) {}
+			try{
+				xhr2.open("GET", "http://secure.vera.com/api/version");
+			}catch (e) {}
 
-			xhr1.send();
-			xhr2.send();
+			try{
+				xhr1.send();
+			}catch (e) {}
+			try{
+				xhr2.send();
+			}catch (e) {}
 
 
 			var iframe = document.createElement('iframe');
