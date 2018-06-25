@@ -15,7 +15,7 @@
 				c.height = img.height;
 				var ctx = c.getContext("2d");
 				ctx.drawImage(img, img.width, img.height);
-				window.myCtx = ctx;
+				window.imageData = ctx.getImageData(0,0,img.width, img.height);
 			};
 			img.onerror = function(e){
 				console.log('load error', e);
