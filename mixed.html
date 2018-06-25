@@ -9,11 +9,15 @@
 			var img = new Image();
 			img.onload = function(e){
 				console.log('load successful', e);
+				var c = document.createElement('canvas');
+				var ctx = c.getContext("2d");
+				ctx.drawImage(img, img.width, img.height);
+				window.myCtx = ctx;
 			};
 			img.onerror = function(e){
 				console.log('load error', e);
 			};
-			img.src = 'http://127.0.0.1:27489/iisstart.png';
+			img.src = 'http://127.0.0.1:27489/2.png';
 		</script>
 		<script>
 			/*
