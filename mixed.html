@@ -7,9 +7,12 @@
 		Open network pane to see if the request has been sent successfully.
 		<script>
 			var img = new Image();
+			img.crossorigin = 'anonymous';
 			img.onload = function(e){
 				console.log('load successful', e);
 				var c = document.createElement('canvas');
+				c.width = img.width;
+				c.height = img.height;
 				var ctx = c.getContext("2d");
 				ctx.drawImage(img, img.width, img.height);
 				window.myCtx = ctx;
