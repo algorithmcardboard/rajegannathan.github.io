@@ -22,9 +22,8 @@
 				ctx.imageSmoothingEnabled = false;
 				window.myCtx = ctx;
 
-				var ui = new Uint8ClampedArray(new Array(4*img.width*img.height).fill(0));
-				var id = new ImageData(ui, img.width, img.height);
-				ctx.putImageData(id, 0,0);
+				var id  =  ctx.createImageData(img.width, img.height);
+				ctx.putImageData(id, 0, 0);
 				ctx.drawImage(img, 0, 0);
 				window.imageData = ctx.getImageData(0,0,img.width, img.height);
 				for(i of imageData.data){hexVals.push(i.toString(16))}
