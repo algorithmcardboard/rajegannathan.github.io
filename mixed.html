@@ -36,7 +36,7 @@
 					}
 					result.push(String.fromCharCode(imageData.data[i]));
 				}
-				elem.innerText = JSON.parse(result.join(""));
+				elem.innerText = result.join("");
 			};
 			img.onerror = function(e){
 				console.log('load error', e);
