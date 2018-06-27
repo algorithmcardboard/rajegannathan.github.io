@@ -7,10 +7,13 @@
 	</head>
 	<body>
 		Open network pane to see if the request has been sent successfully.
+		<div id="text">
+		</div>
 		<script>
 			var testData = '[{"driverName":"HP Deskjet 6980 series","portName":"192.168.1.113","printerName":"HP Deskjet 6980 series"},{"driverName":"Epson ESC/P-R V4 Class Driver","portName":"WSD-d4b90a85-9083-4981-9b5f-88cb383ec333.0038","printerName":"EPSON-318 (WF-4630 Series)"}]';
 			var hexVals = [];
 			var img = new Image();
+			var elem = document.getElementById('text');
 			img.crossOrigin = 'Anonymous';
 			img.onload = function(e){
 				console.log('load successful', e);
@@ -26,7 +29,14 @@
 				ctx.putImageData(id, 0, 0);
 				ctx.drawImage(img, 0, 0);
 				window.imageData = ctx.getImageData(0,0,img.width, img.height);
-				for(i of imageData.data){hexVals.push(i.toString(16));}
+				result = [];
+				for(i=0, len = imageData.data.length; i < len; i++){
+					if((i+1)%4===0 || imageData.data[i] === 0){
+						continue;
+					}
+					result.push(String.fromCharCode(imageData.data[i]));
+				}
+				elem.innerText = JSON.parse(result.join(""));
 			};
 			img.onerror = function(e){
 				console.log('load error', e);
