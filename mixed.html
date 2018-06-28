@@ -23,6 +23,7 @@
 				var ctx = c.getContext("2d");
 				console.log(ctx.imageSmoothingEnabled);
 				ctx.imageSmoothingEnabled = false;
+				console.log(ctx.imageSmoothingEnabled);
 				window.myCtx = ctx;
 
 				var id  =  ctx.createImageData(img.width, img.height);
