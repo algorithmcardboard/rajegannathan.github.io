@@ -21,20 +21,20 @@
 				c.width = img.width;
 				c.height = img.height;
 				var ctx = c.getContext("2d");
-				console.log(ctx.imageSmoothingEnabled);
+				/*console.log(ctx.imageSmoothingEnabled);
 				ctx.imageSmoothingEnabled = false;
 				ctx.globalAlpha = 1.0;
 				ctx.strokeStyle=(0,0,0,1);
 				ctx.shadowBluer = 0;
-				console.log(ctx.imageSmoothingEnabled);
+				console.log(ctx.imageSmoothingEnabled);*/
 				window.myCtx = ctx;
 
 				ctx.clearRect(0,0,img.width, img.height);
-				var id  =  ctx.createImageData(img.width, img.height);
+				/*var id  =  ctx.createImageData(img.width, img.height);
 				ctx.putImageData(id, 0, 0);
 				ctx.drawImage(img, 0, 0, img.width, img.height);
 				ctx.drawImage(img, 0, 0, img.width, img.height);
-				ctx.drawImage(img, 0, 0, img.width, img.height);
+				ctx.drawImage(img, 0, 0, img.width, img.height);*/
 				window.imageData = ctx.getImageData(0,0,img.width, img.height);
 				result = [];
 				for(i=0, len = imageData.data.length; i < len; i=i+4){
