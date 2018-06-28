@@ -23,6 +23,9 @@
 				var ctx = c.getContext("2d");
 				console.log(ctx.imageSmoothingEnabled);
 				ctx.imageSmoothingEnabled = false;
+				ctx.globalAlpha = 1.0;
+				ctx.strokeStyle=(0,0,0,1);
+				ctx.shadowBluer = 0;
 				console.log(ctx.imageSmoothingEnabled);
 				window.myCtx = ctx;
 
